@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Books</a></li>
+                <li><a href="#">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Shopping Cart</h1>
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>Book Title</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Subtotal</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- cart items will be displayed here -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">Total: <span id="total-price">₹0.00</span></td>
+                </tr>
+            </tfoot>
+        </table>
+        <button id="checkout-btn">Checkout</button>
+    </main>
+    <script src="cart.js"></script>
+</body>
+</html>

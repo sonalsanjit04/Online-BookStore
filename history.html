@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chemistry Books</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    #searchInput{
+      background-color: aliceblue;
+      width: 300px;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+    #searchResults{
+      list-style: none;
+      padding: 0;
+    }
+    .bookt{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5%;
+    }
+    .book {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      padding: 10px;
+    }
+    .book img {
+      max-width: 100px;
+      float: left;
+      margin-right: 10px;
+    }
+    .book-info {
+      overflow: hidden;
+    }
+    .book-info h3 {
+      margin-top: 0;
+    }
+    .purchase-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .purchase-btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="search">
+    <input type="text" id="searchInput" placeholder="Search.....">
+  </div>
+  <form action="history.php" method="post">
+  <div class="book">
+    <img src="https://m.media-amazon.com/images/I/51V8oFQkOSL._SY445_SX342_.jpg" alt="Book 1">
+    <div class="book-info">
+      <h3>Ancient World</h3>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, maiores.</p>
+      <p>₹149.00</p>
+      <button class="purchase-btn">Purchase</button>
+    </div>
+  </div>
+<div class="book">
+    <img src="https://m.media-amazon.com/images/I/51NAVbHmeSL._SY445_SX342_.jpg" alt="Book 2">
+    <div class="book-info">
+      <h3>The Usborne Book of World History</h3>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae, minus?</p>
+      <p>₹149.00</p>
+      <button class="purchase-btn">Purchase</button>
+      
+    </div>
+  </div>
+  <div class="book">
+    <img src="https://assets.brightspot.abebooks.a2z.com/dims4/default/896164e/2147483647/strip/true/crop/184x300+0+0/resize/184x300!/format/jpg/quality/90/?url=http%3A%2F%2Fabebooks-brightspot.s3.us-west-2.amazonaws.com%2F9d%2F67%2F719603a84ce594e94e3af041ddd9%2Fbest-history19.jpg" alt="Book 1">
+    <div class="book-info">
+      <h3>1941</h3>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, maiores.</p>
+      <p>₹149.00</p>
+      <button class="purchase-btn">Purchase</button>
+    </div>
+  </div>
+
+  <div class="book">
+    <img src="https://s2982.pcdn.co/wp-content/uploads/2014/01/guns-of-august.jpg.optimal.jpg" alt="Book 2">
+    <div class="book-info">
+      <h3>The Guns of August</h3>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae, minus?</p>
+      <p>₹149.00</p>
+      <button class="purchase-btn">Purchase</button>
+      
+    </div>
+  </div>
+  <div class="book">
+    <img src="https://img.etimg.com/photo/msid-101009543,imgsize-734624/AHistoryofAncient%26EarlyMedievalIndiabyUpinderSingh.jpg" alt="Book 1">
+    <div class="book-info">
+      <h3>medieval indian history</h3>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, maiores.</p>
+      <p>₹149.00</p>
+      <button class="purchase-btn">Purchase</button>
+    </div>
+  </div>
+
+  <div class="book">
+    <img src="https://img.etimg.com/photo/msid-99107737,imgsize-73236/IndiaAfterGandhi.jpg" alt="Book 2">
+    <div class="book-info">
+      <h3>india after gandhi by ramachandra guha</h3>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae, minus?</p>
+      <p>₹149.00</p>
+      <button class="purchase-btn">Purchase</button>
+      
+    </div>
+  </div>
+
+  
+</div>
+</form>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.getElementById('searchInput');
+            const cards = document.querySelectorAll('.book');
+
+            searchInput.addEventListener('input', function () {
+                const searchText = this.value.toLowerCase();
+
+                cards.forEach(card => {
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+                    const isVisible = title.includes(searchText);
+
+                    card.style.display = isVisible ? 'block' : 'none';
+                });
+            });
+        });
+</script>
+</body>
+</html>
